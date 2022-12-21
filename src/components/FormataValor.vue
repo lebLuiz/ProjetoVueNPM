@@ -4,13 +4,16 @@
     </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
     name: "formata-valor",
 
     props: {
         valor: {
-            required: true
+            required: true,
+            type: [String, Number]
         }
     },
 
@@ -20,21 +23,21 @@ export default {
 
     data() {
         return {
-            valorCopy: this.valor,
+            valorCopy: this.valor as any,
             padraoMoedaBrasil: new Intl.NumberFormat("pt-BR", {
                 style: "currency",
                 currency: "BRL",
                 minimumFractionDigits: 2
-            })
+            }) as any,
         };
     },
     
     methods: {
-        onChange({ target }) {
+        onChange({ target }: any) {
             this.valorCopy = this.padraoMoedaBrasil.format(target.value);
         }
-    }
-};
+    },
+});
 </script>
 
 <style scoped>
