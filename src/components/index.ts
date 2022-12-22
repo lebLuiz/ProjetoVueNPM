@@ -1,7 +1,7 @@
-import Button from './Button.vue';
-import FormataValor from './FormataValor.vue';
+import Button from './Button/Button.vue';
+import TextFormField from './TextFormField/TextFormField.vue';
 
 export default {
     Button,
-    FormataValor
+    TextFormField
 };

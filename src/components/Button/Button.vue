@@ -11,7 +11,7 @@
 import { defineComponent, computed } from 'vue';
 
 export default defineComponent({
-    name: 'ButtonTest',
+    name: 'Button',
 
     props: { 
         text: {

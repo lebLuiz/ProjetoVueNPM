@@ -1,19 +1,28 @@
 {
   "name": "projeto_vue_npm_basico_leb001",
-  "version": "0.4.0",
+  "version": "0.8.0",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build:npm": "vue-cli-service build --target lib --name bibliotecaSimplesVue src/index.ts"
+    "build:library": "vue-cli-service build --target lib --name projetinho-basico-leb ./src/index.ts",
+    "build:stats": "vue-cli-service build --target lib --name projetinho-basico-leb ./src/index.ts --report-json"
   },
-  "main": "./dist/bibliotecaSimplesVue.common.js",
+  "main": "./dist/projetinho-basico-leb.common.js",
   "files": [
-    "dist/*"
+    "dist/*",
+    "src/**/*.vue"
+  ],
+  "sideEffects": [
+    "*.css",
+    "*.scss"
   ],
   "dependencies": {
+    "@vueuse/components": "^9.8.2",
+    "@vueuse/core": "^9.8.2",
     "core-js": "^3.8.3",
+    "maska": "^2.1.1",
     "vue": "^3.2.13",
     "vue-class-component": "^8.0.0-0"
   },
